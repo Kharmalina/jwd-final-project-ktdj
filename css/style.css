@@ -1,15 +1,17 @@
 body, html {
     height: 100%;
     width: 100%;
+    font-family: 'Tinos', serif;
+    font-size: 16px;
   }
-
 
   h1 {
       text-align: center;
       color:#001069;
   }
+
 #image {
-  background-image: linear-gradient(140deg, #030220 0%, #001069 45%, #084696 70%);
+  background-image: linear-gradient(140deg, #030220 0%, #001069 35%, #084696 70%);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -17,12 +19,13 @@ body, html {
 
 .container {
     display: grid;
-    opacity: 0.9;
+    font-size: 1.3rem;
 }
 
 .navbar .container-fluid a {
-    color: rgb(201, 201, 201);
-    z-index: 5;
+    color: rgb(228, 225, 225);
+    font-family: 'Tinos', serif;
+    font-size: 1.15rem;
   }
 
   .navbar {
@@ -32,6 +35,8 @@ body, html {
     top: 0;
     width: 100%;
     z-index: 5;
+    border-style: solid;
+    border-bottom-color:rgb(228, 225, 225);
   }
 
   a.button {
@@ -39,15 +44,12 @@ body, html {
     width: 135px;
     padding: 2px 2px;
     border-radius: 5px;
-    border: 1.4px solid rgb(201, 201, 201);
+    border: 1.8px solid rgb(207, 205, 205);
     margin: auto;
     background-color: transparent;
     text-align: center;
-    font-family: Helvetica;
-    font-size: 18px;
-    color: mintcream;
-    margin: 5px;   
-    z-index: 5;  
+    color: mintcream;   
+    margin: 5px;  
   }
 
   .task-add-button {
@@ -56,7 +58,7 @@ body, html {
 
   .card {
       font-weight: 600;
-      opacity: 0.90;
+      opacity: 0.87;
       text-align: center;
       
   }
@@ -69,10 +71,17 @@ body, html {
       display: block;
   }
 
- .task-manager-color h1 {
-     color: rgb(201, 201, 201);
+ footer {
+     background-color: #001069;
+     color: rgb(228, 225, 225);
+     text-align: center;
+     border-top-color:rgb(228, 225, 225);
+     border-style: solid;
+     border-bottom-color:#001069;
+     border-left-color:#001069;
+     border-right-color:#001069;
  }
 
- .mx-5 {
-   margin-left: 5%;
+ .btn-group {
+    cursor: pointer; /* Pointer/hand icon */
  }
