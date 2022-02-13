@@ -60,12 +60,16 @@ body, html {
       font-weight: 600;
       opacity: 0.87;
       text-align: center;
+      
   }
+
+  .card-title{
+    text-align: center;
+}
 
   .mx-auto {
       display: block;
   }
-
 
  footer {
      background-color: #001069;
@@ -76,7 +80,6 @@ body, html {
      border-bottom-color:#001069;
      border-left-color:#001069;
      border-right-color:#001069;
-
  }
 
  .btn-group {
