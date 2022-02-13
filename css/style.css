@@ -58,7 +58,12 @@ body, html {
       font-weight: 600;
       opacity: 0.90;
       text-align: center;
+      
   }
+
+  .card-title{
+    text-align: center;
+}
 
   .mx-auto {
       display: block;
