@@ -17,188 +17,178 @@
   <main id="image">
     <body> 
         
-          <!--Transparent, Fixed(css) NavBar-->
+          <!----------------Transparent, Fixed(css) NavBar----------------->
         <header>
           <nav class="navbar navbar-expand-lg navbar-white bg-*">
               <div class="container-fluid">
-                  <a class="navbar-brand" href="#">AllDone</a>
-                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                       <li class="nav-item">
-                        <a class="nav-link button active" aria-current="page" href="#">Add Task</a>
+                        <a class="nav-link button active" aria-current="page" href="#addtask">Add Task</a>
                       </li>
+                    
                       <li class="nav-item">
-                        <a class="nav-link button" href="#">Manage Tasks</a>
+                        <a class="nav-link button" href="#taskmanager">Manage Tasks</a>
                       </li>    
               </div>          
         </header>  
       
           <br><br><br><br>
 
-          <div class="container">
+          <div class="container-addtask">
             <div class="row">    
-              <div class="col sm-6 md-8 lg-10">
-                <!--Add a Task - Bootstrap card and forms: Name, Descrip., AssignedTo, DueDate, Status-->  
-              <div class="mx-auto" style="width: 550px;">
-                <div class="card text-dark bg-light add-task">
+                <div class="col sm-6 md-8 lg-10">
+                  <!--Add a Task - Bootstrap card and forms: Name, Descrip., AssignedTo, DueDate, Status-->  
+                <div class="mx-auto" style="width: 550px;">
+                  <div class="card text-dark bg-light add-task">
+      
+                      <form>
+                          <h1 class="card-header" id="addtask">Add a Task</h1>
+          
+                        <section class="card-body text-dark">
+                          <div class="add-task">
+                              <label for="name" class="form-label">Name</label>
+                              <input type="text" class="form-control" id="name" aria-describedby="name-of-task" placeholder="Name of Task" required>
+                          </div>
+          
+                          <br>
+          
+                          <div class="add-task">
+                              <label for="description" class="form-label">Description</label>
+                              <input type="text" class="form-control" id="description" aria-describedby="description-of-task" placeholder="Description of Task" required>
+                          </div>
+          
+                          <br>
+          
+                          <div class="add-task">
+                              <label for="assign" class="form-label">Assigned To</label>
+                              <input type="text" class="form-control" id="assign" aria-describedby="assigned-to" placeholder="Task Assigned To" required>
+                          </div>
+          
+                          <br>
+          
+                          <div class="add-task">
+                              <label for="due-date" class="form-label">Due Date</label>
+                              <input type="date" class="form-control" id="due-date" aria-describedby="due-date-of-task" required>
+                          </div>
+          
+                          <br>
+          
+                          <div class="add-task">
+                              <label for="status" class="form-label">Status</label>
+                              <input type="text" list="task-status" class="form-control" id="status" aria-describedby="status-of-task" placeholder="Status of Task" required>
+                              <datalist id="task-status">
+                                  <option value="IN PROGRESS"></option>
+                                  <option value="DONE"></option>
+                                  <option value="REVIEW"></option>
+                                  <option value="STARTED"></option> 
+                                </datalist>      
+                          </div>
+      
+                          <br>
+      
+                          <div class="task-add-button">
+                              <button type="submit" class="btn btn-secondary">Submit</button>  
+                          </div>
+                         </div>   
+                        </section>  
+                      </form> 
+                    </div> 
+                  </div>  
+                 </div> 
+              </div>
+          </div>    
+            
     
-                    <form>
-                        <h1 class="card-header">Add a Task</h1>
-        
-                      <section class="card-body text-dark">
-                        <div class="add-task">
-                            <label for="name" class="form-label">Name</label>
-                            <input type="text" class="form-control" id="name" aria-describedby="name-of-task" placeholder="Name of Task" required>
-                        </div>
-        
-                        <br>
-        
-                        <div class="add-task">
-                            <label for="description" class="form-label">Description</label>
-                            <input type="text" class="form-control" id="description" aria-describedby="description-of-task" placeholder="Description of Task" required>
-                        </div>
-        
-                        <br>
-        
-                        <div class="add-task">
-                            <label for="assign" class="form-label">Assigned To</label>
-                            <input type="text" class="form-control" id="assign" aria-describedby="assigned-to" placeholder="Task Assigned To" required>
-                        </div>
-        
-                        <br>
-        
-                        <div class="add-task">
-                            <label for="due-date" class="form-label">Due Date</label>
-                            <input type="date" class="form-control" id="due-date" aria-describedby="due-date-of-task" required>
-                        </div>
-        
-                        <br>
-        
-                        <div class="add-task">
-                            <label for="status" class="form-label">Status</label>
-                            <input type="text" list="task-status" class="form-control" id="status" aria-describedby="status-of-task" placeholder="Status of Task" required>
-                            <datalist id="task-status">
-                                <option value="IN PROGRESS"></option>
-                                <option value="DONE"></option>
-                                <option value="REVIEW"></option>
-                                <option value="STARTED"></option> 
-                              </datalist>      
-                        </div>
-    
-                        <br>
-    
-                        <div class="task-add-button">
-                            <button type="submit" class="btn btn-secondary">Submit</button>  
-                        </div>
-                       </div>   
-                      </section>  
-                    </form> 
-                  </div> 
-                </div>  
-               </div> 
-            </div>
-        </div> 
-        <!--Task Manager-->
-        <br><br><br><br>
+        <!------------------Task Manager--------------------->
+        <br><br><br><br>    
       <div class="task-manager-color">
-        <h1>Task Manager</h1>    
+        <h1 id="taskmanager">Task Manager</h1>    
       </div>  
         <br>
-        <!--Row 1 -->
-        <div class="row">
-            <!--Task 1 -->
-            <div class="col-lg-6 mb-4">
-                <div class="card" style="width: 25rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">Name: Kharmalina Wireframe</h5>
-                        <p class="card-text">Description: Create a wireframe in Figma and share with team to see</p>
+        <div class="container">
+            <div class="row gy-3">
+                <!----------------Task 1 ------------->
+                <div class="col-sm-1 card card-body bg-light text-dark  m-3">                
+                    <div class="p-3">
+                        <h3>Task 1</h3>
+                        <h5 class="card-title">Name: Wireframe</h5>
+                        <p class="card-text">Description: Create a wireframe in Figma</p>
                         <p class="card-text">Assigned To: Kharmalina </p>
                         <p class="card-text">Due Date: 02/14/2022</p>
                         <p class="card-text">Status: DONE</p>
-                        <a href="#" class="btn btn-primary">Delete</a>
-                      </div>
+                        <div><a href="#" class="btn btn-primary">Delete</a></div>
+                    </div>
                 </div>
-            </div>
-            <!--Task 2-->
-            <div class="col-lg-6 mb-4">
-                <div class="card" style="width: 25rem;">
-                    <div class="card-body">
+                <!----------------Task 2 ------------->
+                <div class="col-sm-1 card card-body bg-light text-dark  m-3">
+                    <div class="p-3">
+                        <h3>Task 2</h3>
                         <h5 class="card-title">Name: Create GitHub Repo</h5>
-                        <p class="card-text">Description: Create a Private GitHub Repo & add my team as collaborators</p>
+                        <p class="card-text">Description: Create a Private GitHub Repo</p>
                         <p class="card-text">Assigned To: Kharmalina </p>
                         <p class="card-text">Due Date: 02/14/2022</p>
                         <p class="card-text">Status: DONE</p>
-                        <a href="#" class="btn btn-primary">Delete</a>
-                      </div>
+                        <div><a href="#" class="btn btn-primary">Delete</a></div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <!--Row 2-->
-        <div class="row">
-            <!--Task 3-->
-            <div class="col-lg-6 mb-4">
-                <div class="card" style="width: 25rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">Name: Bootstrap and HTML5</h5>
-                        <p class="card-text">Description: Create branches and contribute to the repo</p>
-                        <p class="card-text">Assigned To: Tanya, Davis, Kharmalina and Jacob </p>
-                        <p class="card-text">Due Date: 02/14/2022</p>
-                        <p class="card-text">Status: IN PROGRESS</p>
-                        <a href="#" class="btn btn-primary">Delete</a>
-                      </div>
+                <div class="row gy-3">
+                    <!----------------Task 3 ------------->
+                    <div class="col-sm-1 card card-body bg-light text-dark  m-3">
+                        <div class="p-3">
+                            <h3>Task 3</h3>
+                            <h5 class="card-title">Name: Bootstrap and HTML5</h5>
+                            <p class="card-text">Description: Create branches and contribute to the repo</p>
+                            <p class="card-text">Assigned To: Tanya, Davis, Kharmalina and Jacob </p>
+                            <p class="card-text">Due Date: 02/14/2022</p>
+                            <p class="card-text">Status: IN PROGRESS</p>
+                            <div><a href="#" class="btn btn-primary">Delete</a></div>
+                        </div>
+                    </div>
+    
+                    <!----------------Task 4 ------------->
+                    <div class="col-sm-1 card card-body bg-light text-dark  m-3">
+                        <div class="p-3">
+                            <h3>Task 4</h3>
+                            <h5 class="card-title">Name: Team Meeting on Feb. 12</h5>
+                            <p class="card-text">Description: Meet up with the team to discuss Sprint 1</p>
+                            <p class="card-text">Assigned To: Davis, Tanya, Kharmalina and Jacob </p>
+                            <p class="card-text">Due Date: 02/14/2022</p>
+                            <p class="card-text">Status: IN PROGRESS</p>
+                            <div><a href="#" class="btn btn-primary">Delete</a></div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <!--Task 4-->
-            <div class="col-lg-6 mb-4">
-                <div class="card" style="width: 25rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">Name: Team Meeting on Feb. 12</h5>
-                        <p class="card-text">Description: Meet up with the team to discuss Sprint 1</p>
-                        <p class="card-text">Assigned To: Davis, Tanya, Kharmalina and Jacob </p>
-                        <p class="card-text">Due Date: 02/14/2022</p>
-                        <p class="card-text">Status: IN PROGRESS</p>
-                        <a href="#" class="btn btn-primary">Delete</a>
-                      </div>
+    
+                <div class="row g-3">
+                    <!----------------Task 5 ------------->
+                    <div class="col-sm-1 card card-body bg-light text-dark  m-3">
+                        <div class="p-3">
+                            <h3>Task 5</h3>
+                            <h5 class="card-title">Name: Self Care</h5>
+                            <p class="card-text">Description: Take time away from coding to do something you enjoy</p>
+                            <p class="card-text">Assigned To: Jacob, Kharmalina, Davis and Tanya</p>
+                            <p class="card-text">Due Date: 02/14/2022</p>
+                            <p class="card-text">Status: IN PROGRESS</p>
+                            <div><a href="#" class="btn btn-primary">Delete</a></div>
+                        </div>
+                    </div>
+                    <!----------------Task 6 ------------->
+                    <div class="col-sm-1 card card-body bg-light text-dark  m-3">
+                        <div class="p-3">
+                            <h3>Task 6</h3>
+                            <h5 class="card-title">Name: Motivation</h5>
+                            <p class="card-text">Description: Don't Give Up!</p>
+                            <p class="card-text">Assigned To: Everyone at GenUSA jwd-flex-Cohort2 </p>
+                            <p class="card-text">Due Date: 04/21/2022</p>
+                            <p class="card-text">Status: IN PROGRESS</p>
+                            <div><a href="#" class="btn btn-primary">Delete</a></div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <!--Row 3 -->
-        <div class="row">
-            <!--Task 5-->
-            <div class="col-lg-6 mb-4">
-                <div class="card" style="width: 25rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">Name: Self Care</h5>
-                        <p class="card-text">Description: Take time away from coding to do something you enjoy</p>
-                        <p class="card-text">Assigned To: Jacob, Kharmalina, Davis and Tanya</p>
-                        <p class="card-text">Due Date: 02/14/2022</p>
-                        <p class="card-text">Status: IN PROGRESS</p>
-                        <a href="#" class="btn btn-primary">Delete</a>
-                      </div>
-                </div>
-            </div>
-            <!--Task 6-->
-            <div class="col-lg-6 mb-4">
-                <div class="card" style="width: 25rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">Name: Motivation</h5>
-                        <p class="card-text">Description: Don't Give Up! We are doing an awesome job!</p>
-                        <p class="card-text">Assigned To: Everyone at GenUSA jwd-flex-Cohort2 </p>
-                        <p class="card-text">Due Date: 04/21/2022</p>
-                        <p class="card-text">Status: IN PROGRESS</p>
-                        <a href="#" class="btn btn-primary">Delete</a>
-                      </div>
-                </div>
-            </div>
-        </div>
-
 </main>    
     
 
-  
   
 
 
