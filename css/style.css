@@ -56,6 +56,10 @@ body, html {
       text-align: center;
   }
 
+  .form-label {
+      text-align: left;
+  }
+
   .card {
       font-weight: 600;
       opacity: 0.87;
