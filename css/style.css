@@ -52,6 +52,11 @@ body, html {
     margin: 5px;  
   }
 
+  a:hover {
+    background-color: rgb(56, 0, 209);
+    color: white;
+  }
+
   .task-add-button {
       text-align: center;
   }
@@ -63,8 +68,7 @@ body, html {
   .card {
       font-weight: 600;
       opacity: 0.87;
-      text-align: center;
-      
+      text-align: left;      
   }
 
   .card-title{
@@ -75,7 +79,7 @@ body, html {
       display: block;
   }
 
- footer {
+ footer{
      background-color: #001069;
      color: rgb(228, 225, 225);
      text-align: center;
