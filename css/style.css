@@ -64,7 +64,7 @@ body, html {
   .card {
       font-weight: 600;
       opacity: 0.87;
-      text-align: center;      
+      text-align: left;      
   }
 
   .card-title{
@@ -88,6 +88,8 @@ body, html {
 
  .btn-group {
     cursor: pointer; /* Pointer/hand icon */
+
   
  }
+
 
