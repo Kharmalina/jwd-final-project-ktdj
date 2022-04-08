@@ -25,9 +25,8 @@ class TaskManager {   //step 2.1.a
       status: 'TODO'   //default status
     };
 
-    this.tasks.push(task); //step 3.5
+    this.tasks.push(task); //step 3.5 (this is what it is pushed to array above)
   }
 }
-
 
 
