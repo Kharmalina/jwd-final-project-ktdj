@@ -7,7 +7,7 @@ body, html {
 
   h1 {
       text-align: center;
-      color:#001069;
+      color:#000000;
   }
 
 #image {
@@ -90,7 +90,21 @@ body, html {
      border-right-color:#001069;
  }
 
- .btn-group {
+ .btn-group.btn {
     cursor: pointer; /* Pointer/hand icon */
-    text-align: center;
+ }
+
+ a.btn {
+   text-align: center;
+ }
+
+ #alertMessage {
+  font-size: 14.5px;
+  margin-top: 5px;
+ }
+
+ .badge {
+   color: white;
+   border: 1px solid red;
+   background-color: red;
  }
