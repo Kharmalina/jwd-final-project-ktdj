@@ -18,7 +18,7 @@
 
 // =======Step 4: Adding Tasks With The Form =======
 
-const newTask = new TaskManager(1); //Initialization of New Task
+const newTask = new TaskManager(); //Initialization of New Task
 
 /*===============Test to see if works ======================
 newTask.addTask("mop", "mopping", "davis", 07 / 08 / 1989);
@@ -42,18 +42,20 @@ newTaskForm.addEventListener("submit", (e) => {
 	const errorMessage = document.querySelector("#alertMessage");
 	//needed to add somewhere!!!!!!!!!!
 
-	/*Step 4.3 We need to get the values of input from form
-  we alraedy trageted them with the variables above
-so now we have to put thier 'values' into another
-varable with a .value at the end.*/
+// 	/*Step 4.3 We need to get the values of input from form
+//   we already targeted them with the variables above
+// so now we have to put their 'values' into another
+// variable with a .value at the end.*/
   const name = newTaskNameInput.value;
 	const description = newTaskDescription.value;
 	const assignedTo = newTaskAssignedTo.value;
 	const dueDate = newTaskDueDate.value;
-});
 
-newTask.addTask(this.name, this.description,this.assignedTo,this.dueDate);
-console.log(newTask.addTask());
 
-//step 5.3.2
-newTask.render();
+newTask.addTask(name, description, assignedTo, dueDate);	
+
+newTask.render();//step 5.3.2
+})
+;
+
+
