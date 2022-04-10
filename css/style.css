@@ -98,13 +98,21 @@ body, html {
    text-align: center;
  }
 
- #alertMessage {
+ /* #alertMessage {
   font-size: 14.5px;
   margin-top: 5px;
- }
+ } */
 
  .badge {
    color: white;
    border: 1px solid red;
    background-color: red;
  }
+
+ .invalid-form-alert {
+  display: block;
+
+} 
+.hide-alert {
+  display: none;
+}

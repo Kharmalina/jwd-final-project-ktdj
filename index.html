@@ -53,8 +53,8 @@
                           <div class="add-task">
                               <label for="newTaskNameInput" class="form-label">Name</label>
                               <input id="newTaskNameInput" type="text" class="form-control" aria-describedby="name-of-task" placeholder="Name of Task">
-                              <div class="error">
-                              </div>
+                              <!-- <div class="alert alert-danger hide-alert invalid-form-alert" id="alert" role="alert">
+                              </div> -->
                           </div>
           
                           <br>
@@ -62,8 +62,8 @@
                           <div class="add-task">
                               <label for="newTaskDescription" class="form-label">Description</label>
                               <textarea type="text" class="form-control" id="newTaskDescription" placeholder="Description of Task"></textarea>
-                              <div class="error">
-                              </div>
+                              <!-- <div class="alert alert-danger hide-alert invalid-form-alert" id="alert" role="alert">
+                              </div> -->
                           </div>
           
                           <br>
@@ -71,8 +71,8 @@
                           <div class="add-task">
                               <label for="newTaskAssignedTo" class="form-label">Assigned To</label>
                               <input id="newTaskAssignedTo" type="text" class="form-control" aria-describedby="assigned-to" placeholder="Task Assigned To">
-                              <div class="error">
-                              </div>
+                              <!-- <div class="alert alert-danger hide-alert invalid-form-alert" id="alert" role="alert">
+                              </div> -->
                           </div>
           
                           <br>
@@ -80,8 +80,8 @@
                           <div class="add-task">
                               <label for="newTaskDueDate" class="form-label">Due Date</label>
                               <input id="newTaskDueDate" type="date" class="form-control" aria-describedby="due-date-of-task">
-                              <div class="error">
-                              </div>
+                              <!-- <div class="alert alert-danger hide-alert invalid-form-alert" id="alert" role="alert">
+                              </div> -->
                           </div>
           
                           <br>
@@ -117,6 +117,10 @@
                           <div class="task-add-button">
                               <button id="submit-btn" type="submit" class="btn btn-primary">Submit Task!</button>  
                           </div>
+                          <br>
+                          <div class="alert alert-danger hide-alert" id="alert" role="alert">
+                            Error!
+                          </div>
                         </div>   
                         </section>  
                       </form> 
@@ -131,8 +135,8 @@
 <br><br><br><br>    
 <div class="container bg-* d-grid gap-4">
     <div id="taskmanager"><h1 class="text-white">Task Manager</h1></div>
-    <ul id="tasksList" class="list-group">
-      <li class="d-flex row g-4 justify-content-center align-items-center">
+    <ul class="list-group" style="list-style-type: none" id="tasksList"></ul>
+      <!-- <li class="d-flex row g-4 justify-content-center align-items-center">
         <div class="col-12 col-md-8 col-lg-9">
           <div class="card g-4">
               <div class="card-body"> 
@@ -147,8 +151,8 @@
               </div>
           </div>
         </div>
-      </li>
-    </ul>
+      </li> -->
+    
 
     <!-- <ul id="tasksList">
       <li class="row g-4 row d-flex justify-content-center">
