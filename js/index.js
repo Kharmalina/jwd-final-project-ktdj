@@ -44,9 +44,9 @@ newTaskForm.addEventListener("submit", (e) => {
 	// so now we have to put their 'values' into another
 	// variable with a .value at the end.*/
 	let name = newTaskNameInput.value;
-	const description = newTaskDescription.value;
-	const assignedTo = newTaskAssignedTo.value;
-	const dueDate = newTaskDueDate.value;
+	let description = newTaskDescription.value;
+	let assignedTo = newTaskAssignedTo.value;
+	let dueDate = newTaskDueDate.value;
 
 	//===== Validate our inputs function ======
 
@@ -59,26 +59,44 @@ newTaskForm.addEventListener("submit", (e) => {
       errorMessage.innerHTML = `${errorList[0]}`;
     }
     else {
-      newTask.addTask(name, description, assignedTo, dueDate);
-      newTask.render(); //step 5.3.2
-      this.name = '';
-      errorMessage.style.display = "none"
-    }
+			newTask.addTask(name, description, assignedTo, dueDate);
+			newTask.render(); //step 5.3.2
+			name = ""; //******* not clearing form *********/
+			description = "";
+			assignedTo = "";
+			dueDate = "";
+			errorMessage.style.display = "none";
+		}
   }
-
   checkForBlanks(); //invoke the abive function
 });
 
+//================  Task 7: Update A Task =====================
+
 //Step 7.1 is the #id used in index.html for ul tag
 //step 7.2 this is the id form step 7.1
-const tasksList = document.querySelector("#taskList");
+const tasksListId = document.querySelector("#tasksList");
 
 //step 7.3
-//// Add an 'onclick' event listener to the Tasks List
-tasksList.addEventListener('click', (e) => {
-   // Check if a "Mark As Done" button was clicked
-  if (e.target.classList.contains('done-botton')) {
-    
+
+// Add an 'onclick' event listener to the Tasks List
+tasksListId.addEventListener('click', (e) => {
+  // Check if a "Mark As Done" button was clicked
+  if (e.target.classList.contains('done-button')) {
+    // Get the parent Task
+    const parentTask = e.target.parentElement.parentElement;
+console.log(parentTask)
+    // Get the taskId of the parent Task.
+    const taskId = Number(parentTask.dataset.taskId);
+
+    // Get the task from the TaskManager using the taskId
+    const taskCardInfo = newTask.getTaskById(taskId);
+
+    // Update the task status to 'DONE'
+    taskCardInfo.status = "DONE";
+
+    // Render the tasks
+    newTask.render();
   }
-})
+});
 

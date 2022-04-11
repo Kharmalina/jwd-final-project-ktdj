@@ -1,28 +1,58 @@
 //=========================================================
-//When create a function why not work if use {}?
-
-const createTaskHtml = (name, description, assignedTo, dueDate, status) => {
-	const htmlTask = `<li>
-	                    <div class="row g-4 row d-flex justify-content-center">
-                        <div class="col-12 col-md-6 col-lg-4">
-                          <div class="card g-4">
-                            <div class="card-body">                     
-                               <p class="card-text">Name: ${name}</p>
-                               <p class="card-text">Description:${description}</p>
-                               <p class="card-text">Assigned To: ${assignedTo} </p>
-                               <p class="card-text">Due Date:${dueDate}</p>
-                               <p class="card-text">Status: ${status}</p> 
-																<button class="btn btn-success done-button"}">Mark As Done</button>
-                                <button class="btn btn-danger delete-button">Delete</button>
-													  </div>                    
-                          </div>
-                        </div>								
-                       </div>				
-                      </li>`;
-
+//have to call this function at the end
+const createTaskHtml = (id, name, description, assignedTo, dueDate, status) => {
+	const htmlTask = `
+    <li data-task-id=${id} class="d-flex row g-4 justify-content-center align-items-center">
+        <div class="col-12 col-md-8 col-lg-9">
+        <div class="card g-4" data-task-id=${id}>
+            <div class="card-body"> 
+                <div class="d-flex w-100 align-items-center justify-content-between align-items-center">
+                <h4 class="card-text"><b>Name:</b> ${name}</h4>
+                <h4><span class="badge ${
+									status === "TODO" ? "bg-danger" : "bg-success"
+								}">${status}</span></h4>
+              <button class="done-button btn btn-success${
+								status === "TODO" ? "invisible" : "btn btn-danger"
+							}">DELETE</button>
+                 
+                </div>
+                <h4 class="card-text"><b>Description:</b> ${description}</h4>
+                <h4 class="card-text"><b>Assigned To:</b> ${assignedTo}</h4>
+                <h4 class="card-text"><b>Due Date:</b> ${dueDate}</h4>
+                <button type="button" class="btn btn-success done-button ${
+									status === "TODO" ? "visible" : "invisible"
+								}">Mark as Done</button>
+            
+               
+            </div>
+        </div>
+        </div>
+    </li>
+`;
 	return htmlTask;
 };
-console.log(createTaskHtml("mop", "mop over", "davis", "07/06/2003", "todo"));
+// const createTaskHtml = (id, name, description, assignedTo, dueDate, status) => {
+// 	const htmlTask = `<li data-task-id=${id} class="d-flex row g-4 justify-content-center align-items-center">
+// 	                    <div class="row g-4 row d-flex justify-content-center">
+//                         <div class="col-12 col-md-6 col-lg-4">
+//                           <div class="card g-4">
+//                             <div class="card-body">                     
+//                                <p class="card-text">Name: ${name}</p>
+//                                <p class="card-text">Description:${description}</p>
+//                                <p class="card-text">Assigned To: ${assignedTo} </p>
+//                                <p class="card-text">Due Date:${dueDate}</p>
+//                                <p class="card-text">Status: ${status ="TODO"}</p> 
+// 																<button class="btn btn-success done-button">Mark As Done</button>
+//                                 <button class="btn btn-danger delete-button">Delete</button>
+// 													  </div>                    
+//                           </div>
+//                         </div>								
+//                        </div>				
+//                       </li>`;
+
+// 	return htmlTask;
+// };
+// console.log(createTaskHtml(1, "mop", "mop over", "davis", "07/06/2003", "todo"));
 
 //=========================================================
 class TaskManager {
@@ -56,6 +86,27 @@ class TaskManager {
 		this.tasks.push(task); //step 3.5 (this is what it is pushed to array above)
 	}
 
+/*===================================
+ create a *getTaskById() method**. Step7.4.2
+ ======================================*/
+
+  getTaskById(taskId) {
+		let foundTask;
+		// Loop over the tasks and find the task with the id passed as a parameter
+		for (let i = 0; i < this.tasks.length; i++) {
+			// Get the current task in the loop
+			const task = this.tasks[i];
+
+			// Check if its the right task by comparing the task's id to the id passed as a parameter
+			if (task.id === taskId) {
+				//store task in the found task variable
+				foundTask = task;
+			}
+		}
+		// Return the found task
+		return foundTask;
+	}
+
 	/*===================================
  create a **render() method**. Step5.2
  ======================================*/
@@ -74,6 +125,7 @@ class TaskManager {
 
 			const taskHtml = createTaskHtml(
 				//step 5.2.3.iv
+        task.id,  //Step7.3.5 9add task.id
 				task.name,
 				task.description,
 				task.assignedTo,
