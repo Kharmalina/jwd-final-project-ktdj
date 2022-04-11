@@ -99,20 +99,15 @@
           
                           <div class="add-task">
                               <label for="status" class="form-label">Status</label>
-                              <input type="text" list="task-status" class="form-control" id="status" aria-describedby="status-of-task" placeholder="Status of Task" 3>
-                              <datalist id="task-status">
-                                  <option value="IN PROGRESS"></option>
-                                  <option value="DONE"></option>
-                                  <option value="REVIEW"></option>
-                                  <option value="TO DO"></option> 
-                                </datalist>      
-                          </div>
+                              <input type="text" list="task-status" class="form-control" aria-describedby="status-of-task" placeholder="Status of Task" 
+                              id="newTaskStatus">                          </div>    
       
                           <br>
       
                           <div class="task-add-button">
-                              <button id="submitBtn" type="submit" class="btn btn-primary">Submit</button>  
+                              <button id="submitBtn" type="submit" class="btn btn-primary">Submit</button>                              
                           </div>
+                          <div id ="alertMessage"></div> </div>
                          </div>   
                         </section>  
                       </form> 
@@ -146,9 +141,6 @@
     <script src="js/taskManager.js"></script>
     <script src="js/index.js"></script>
 </body>
-
-
-
 </html>
 
 
@@ -183,7 +175,7 @@
             }
             console.log(`name: ${newTaskNameInput.value} description: ${newTaskDescription.value} assigned: ${newTaskAssignedTo.value} due date: ${newTaskDueDate.value}`);
             return true;
-        } -->
+        } 
     
     
     }

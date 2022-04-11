@@ -1,8 +1,8 @@
 //=========================================================
 //When create a function why not work if use {}?
 
-const createTaskHtml = (name, description, assignedTo, dueDate, status) =>{
-  const htmlTask = `<li>
+const createTaskHtml = (name, description, assignedTo, dueDate, status) => {
+	const htmlTask = `<li>
 	                    <div class="row g-4 row d-flex justify-content-center">
                         <div class="col-12 col-md-6 col-lg-4">
                           <div class="card g-4">
@@ -12,7 +12,7 @@ const createTaskHtml = (name, description, assignedTo, dueDate, status) =>{
                                <p class="card-text">Assigned To: ${assignedTo} </p>
                                <p class="card-text">Due Date:${dueDate}</p>
                                <p class="card-text">Status: ${status}</p> 
-																<button class="btn btn-success"}">Mark As Done</button>
+																<button class="btn btn-success done-button"}">Mark As Done</button>
                                 <button class="btn btn-danger delete-button">Delete</button>
 													  </div>                    
                           </div>
@@ -20,14 +20,9 @@ const createTaskHtml = (name, description, assignedTo, dueDate, status) =>{
                        </div>				
                       </li>`;
 
-
-
-return htmlTask;
-}
+	return htmlTask;
+};
 console.log(createTaskHtml("mop", "mop over", "davis", "07/06/2003", "todo"));
-
-
-
 
 //=========================================================
 class TaskManager {
@@ -64,21 +59,21 @@ class TaskManager {
 	/*===================================
  create a **render() method**. Step5.2
  ======================================*/
-  render() {
+	render() {
 		const tasksHtmlList = []; //Step 5.2.2
 		// let renderTask = this.tasks.forEach((i) => {
 		//const task = this.tasks[i]; //step 5.2.3.i
 
-		for(let i=0; i< this.tasks.length; i++){
-      const task = this.tasks[i]
-		
-		
-			const date = new Date(task.dueDate); //Step 5.2.3.ii
-			const formattedDate = `${date.getMonth()+1}/${date.getDate()}/${date.getFullYear()}`; //step 5.2.3.iii
+		for (let i = 0; i < this.tasks.length; i++) {
+			const task = this.tasks[i];
 
+			const date = new Date(task.dueDate); //Step 5.2.3.ii
+			const formattedDate = `${
+				date.getMonth() + 1
+			}/${date.getDate()}/${date.getFullYear()}`; //step 5.2.3.iii
 
 			const taskHtml = createTaskHtml(
-				//step 5.2.3.iv	
+				//step 5.2.3.iv
 				task.name,
 				task.description,
 				task.assignedTo,
@@ -87,25 +82,21 @@ class TaskManager {
 			);
 
 			tasksHtmlList.push(taskHtml); //step 5.2.3.v
-			}; //for loop() ending
+		} //for loop() ending
 
 		const tasksHtml = tasksHtmlList.join("/n"); ////step 5.2.4
 
 		const tasksList = document.querySelector("#tasksList");
 		tasksList.innerHTML = tasksHtml;
-	}//render() ending
-  } //class ending }
-
-
-
-
+	} //render() ending
+} //class ending }
 
 //===================================================================================
 // render() {
 //     const tasksHtmlList = [];
-    
+
 //     for(let i=0; i<this.tasks.length; i++) {
-//         // stores the current task 
+//         // stores the current task
 //         const taskCardInfo = this.tasks[i];
 //         // Date object
 //         const date = new Date(taskCardInfo.dueDate);
