@@ -103,11 +103,6 @@ body, html {
   margin-top: 5px;
  } */
 
- .badge {
-   color: white;
-   border: 1px solid red;
-   background-color: red;
- }
 
  .invalid-form-alert {
   display: block;

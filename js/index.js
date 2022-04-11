@@ -53,7 +53,7 @@ newTaskForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
 
-    // Validation code 
+    // Validation code when click submit button
 
     let isFormValidation = validFormFieldInput();
     
@@ -67,6 +67,21 @@ newTaskForm.addEventListener("submit", (e) => {
         newTaskDescription.value = '';
         newTaskAssignedTo.value = '';
         newTaskDueDate.value = '';
+    }
+
+});
+
+
+const tasksListId = document.querySelector("#tasksList");
+
+tasksListId.addEventListener("click", (event) => {
+    if (event.target.classList.contains("done-button")) {
+        const parentTask = event.target.parentElement.parentElement;
+        // console.log(parentTask);
+        const taskId = Number(parentTask.dataset.taskId);
+        const taskCardInfo = taskManager.getTaskById(taskId);
+        taskCardInfo.status = "DONE";
+        taskManager.render();
     }
 
 });
