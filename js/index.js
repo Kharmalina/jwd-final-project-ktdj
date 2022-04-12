@@ -54,18 +54,18 @@ newTaskForm.addEventListener("submit", (e) => {
     const errorList = [];
 
     if (!name || !description || !assignedTo || !dueDate) {
-      errorList.push(`ERROR !! Please fill in all feilds.`);
+      errorList.push(`ERROR !! Please fill in all fields.`);
       errorMessage.style.color = "red";
       errorMessage.innerHTML = `${errorList[0]}`;
     }
     else {
 			newTask.addTask(name, description, assignedTo, dueDate);
-			newTask.render(); //step 5.3.2
+			newTask.render(); //step 5.3.2			
+			errorMessage.style.display = "none";
 			name = ""; //******* not clearing form *********/
 			description = "";
 			assignedTo = "";
 			dueDate = "";
-			errorMessage.style.display = "none";
 		}
   }
   checkForBlanks(); //invoke the abive function

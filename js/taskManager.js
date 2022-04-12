@@ -4,7 +4,7 @@ const createTaskHtml = (id, name, description, assignedTo, dueDate, status) => {
 	const htmlTask = `
     <li data-task-id=${id} class="d-flex row g-4 justify-content-center align-items-center">
         <div class="col-12 col-md-8 col-lg-9">
-        <div class="card g-4" data-task-id=${id}>
+        <div class="card g-4" data-task-id=${id}>  
             <div class="card-body"> 
                 <div class="d-flex w-100 align-items-center justify-content-between align-items-center">
                 <h4 class="card-text"><b>Name:</b> ${name}</h4>
@@ -86,12 +86,12 @@ class TaskManager {
 		this.tasks.push(task); //step 3.5 (this is what it is pushed to array above)
 	}
 
-/*===================================
+/*===========================================
  create a *getTaskById() method**. Step7.4.2
- ======================================*/
+ ===========================================*/
 
-  getTaskById(taskId) {
-		let foundTask;
+  getTaskById(taskId) { // this taskId comes from the "const createTaskHtml" above
+		let foundTask;     // the /data-task-id=${id}/ is converted totaskId  
 		// Loop over the tasks and find the task with the id passed as a parameter
 		for (let i = 0; i < this.tasks.length; i++) {
 			// Get the current task in the loop
@@ -106,6 +106,14 @@ class TaskManager {
 		// Return the found task
 		return foundTask;
 	}
+
+
+//================ Task 8: Persisting Tasks to LocalStorage =====================
+
+save(){
+
+}
+
 
 	/*===================================
  create a **render() method**. Step5.2
