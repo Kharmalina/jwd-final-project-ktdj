@@ -61,7 +61,7 @@ newTaskForm.addEventListener("submit", (e) => {
     else {
 	  newTask.addTask(name, description, assignedTo, dueDate);
 	  newTask.render(); //step 5.3.2
-	  newTaskForm.reset();   //This will clear form
+	  // newTaskForm.reset();   //This will clear form
 	  errorMessage.style.display = "none";
 	}
   }

@@ -27,8 +27,7 @@ const createTaskHtml = (id, name, description, assignedTo, dueDate, status) => {
 											}">Mark as Done</button>
                        <button class="btn btn-primary save-button ${
 													status === "TODO" ? "invisible" : "visible"
-												}">SAVE</button>
-                   
+												}">SAVE</button>                  
                   
             </div>      
             </div>
@@ -73,12 +72,13 @@ class TaskManager {
 		this.tasks.push(task); //step 3.5 (this is what it is pushed to array above)
 	}
 
-/*===========================================
+	/*===========================================
  create a *getTaskById() method**. Step7.4.2
  ===========================================*/
 
-  getTaskById(taskId) { // this taskId comes from the "const createTaskHtml" above
-		let foundTask;     // the /data-task-id=${id}/ is converted totaskId  
+	getTaskById(taskId) {
+		// this taskId comes from the "const createTaskHtml" above
+		let foundTask; // the /data-task-id=${id}/ is converted totaskId
 		// Loop over the tasks and find the task with the id passed as a parameter
 		for (let i = 0; i < this.tasks.length; i++) {
 			// Get the current task in the loop
@@ -93,14 +93,6 @@ class TaskManager {
 		// Return the found task
 		return foundTask;
 	}
-
-
-//================ Task 8: Persisting Tasks to LocalStorage =====================
-
-save(){
-
-}
-
 
 	/*===================================
  create a **render() method**. Step5.2
@@ -120,7 +112,7 @@ save(){
 
 			const taskHtml = createTaskHtml(
 				//step 5.2.3.iv
-        task.id,  //Step7.3.5 9add task.id
+				task.id, //Step7.3.5 9add task.id
 				task.name,
 				task.description,
 				task.assignedTo,
@@ -136,25 +128,57 @@ save(){
 		const tasksList = document.querySelector("#tasksList");
 		tasksList.innerHTML = tasksHtml;
 	} //render() ending
+
+	//======== Task 8: Persisting Tasks to LocalStorage =======
+	/*Youtube video about local storage:
+    (youtube video https://www.youtube.com/watch?v=k8yJCeuP6I8)
+    Because localStorage can only store strings need to convert
+    this.tasks(array) and this.current.Id(number) with JASON,stringify
+   =================================================================*/
+
+	//create the save method
+	//step 8.1.1
+
+	save() {
+		//create a JSON string of the tasks
+		//this.tasks comes from constructor above
+		//bc this.tasks is an array need to convert to string
+		//step 8.1.2
+		const tasksJson = JSON.stringify(this.tasks);
+
+		// store the JSON string in local storage with
+		//below method. has two perameters ("key","value" )
+		//step 8.1.3
+		localStorage.setItem("tasks", tasksJson);
+
+		// Convert the currentId to a string;
+		//this.currentId comes from constructor above
+		//bc this.currentId is an number need to convert to string
+		//step //step 8.1.4 and 8.1.5
+		const currentId = String(this.currentId);
+
+		// Store the currentId in localStorage
+		//step 8.1.6
+		localStorage.setItem("currentId", currentId);
+  } // save() ending
+  
+
+
+	//======= step 8.2  ====
+
+	//create the load method()
+  load() {
+    // Check if any tasks are saved in localStorage
+    if (localStorage.getItem('tasks')) {
+      // Get the JSON string of tasks in localStorage
+      const tasksJson = localStorage.getItem('tasks');
+    }
+  }//load() ending
+
+
 } //class ending }
 
-//===================================================================================
-// render() {
-//     const tasksHtmlList = [];
 
-//     for(let i=0; i<this.tasks.length; i++) {
-//         // stores the current task
-//         const taskCardInfo = this.tasks[i];
-//         // Date object
-//         const date = new Date(taskCardInfo.dueDate);
-//         // human-readable code of the dueDate property
-//         const formattedDate = `${date.getMonth() + 1} / ${date.getDate()} / ${date.getFullYear()}`;
-//         const taskHtml = createTaskHtml(taskCardInfo.name, taskCardInfo.description, taskCardInfo.assignedTo, formattedDate, taskCardInfo.status);
-//         tasksHtmlList.push(taskHtml);
-//     }
 
-//     const tasksHtml = tasksHtmlList.join("/n");
-//     const tasksList = document.getElementById("tasksList");
-//     tasksList.innerHTML = tasksHtml;
-//}
-//===================================================================================
+
+
