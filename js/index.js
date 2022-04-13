@@ -59,11 +59,11 @@ newTaskForm.addEventListener("submit", (e) => {
       errorMessage.innerHTML = `${errorList[0]}`;
     }
     else {
-			newTask.addTask(name, description, assignedTo, dueDate);
-			newTask.render(); //step 5.3.2
-	    newTaskForm.reset();   //This will clear form
-			errorMessage.style.display = "none";
-		}
+	  newTask.addTask(name, description, assignedTo, dueDate);
+	  newTask.render(); //step 5.3.2
+	  newTaskForm.reset();   //This will clear form
+	  errorMessage.style.display = "none";
+	}
   }
   checkForBlanks(); //invoke the abive function
 });
