@@ -1,9 +1,10 @@
 //=========================================================
 //have to call this function at the end
+//done-button class use for tasksListId.addEventListener
 const createTaskHtml = (id, name, description, assignedTo, dueDate, status) => {
-	const htmlTask = `
+	const htmlTask1 = `
     <li data-task-id=${id} class="d-flex row g-4 justify-content-center align-items-center">
-        <div class="col-12 col-md-8 col-lg-9">
+        <div class="col-12 col-md-8 col-lg-5">
         <div class="card g-4" data-task-id=${id}>
             <div class="card-body"> 
                 <div class="d-flex w-100 align-items-center justify-content-between align-items-center">
@@ -11,47 +12,33 @@ const createTaskHtml = (id, name, description, assignedTo, dueDate, status) => {
                 <h4><span class="badge ${
 									status === "TODO" ? "bg-danger" : "bg-success"
 								}">${status}</span></h4>
-              <button class="done-button btn btn-success${
-								status === "TODO" ? "invisible" : "btn btn-danger"
-							}">DELETE</button>
-                 
                 </div>
                 <h4 class="card-text"><b>Description:</b> ${description}</h4>
                 <h4 class="card-text"><b>Assigned To:</b> ${assignedTo}</h4>
                 <h4 class="card-text"><b>Due Date:</b> ${dueDate}</h4>
-                <button type="button" class="btn btn-success done-button ${
-									status === "TODO" ? "visible" : "invisible"
-								}">Mark as Done</button>
-            
-               
+                <br>
+            <div class="bottomTaskButtons"> 
+                 
+                  <button class="btn btn-danger delete-button ${
+										status === "TODO" ? "invisible" : "visible"
+									}">Delete</button>
+                     <button type="button" class="btn btn-success done-button ${
+												status === "TODO" ? "visible" : "invisible"
+											}">Mark as Done</button>
+                       <button class="btn btn-primary save-button ${
+													status === "TODO" ? "invisible" : "visible"
+												}">SAVE</button>
+                   
+                  
+            </div>      
             </div>
         </div>
         </div>
     </li>
 `;
-	return htmlTask;
+	return htmlTask1;
 };
-// const createTaskHtml = (id, name, description, assignedTo, dueDate, status) => {
-// 	const htmlTask = `<li data-task-id=${id} class="d-flex row g-4 justify-content-center align-items-center">
-// 	                    <div class="row g-4 row d-flex justify-content-center">
-//                         <div class="col-12 col-md-6 col-lg-4">
-//                           <div class="card g-4">
-//                             <div class="card-body">                     
-//                                <p class="card-text">Name: ${name}</p>
-//                                <p class="card-text">Description:${description}</p>
-//                                <p class="card-text">Assigned To: ${assignedTo} </p>
-//                                <p class="card-text">Due Date:${dueDate}</p>
-//                                <p class="card-text">Status: ${status ="TODO"}</p> 
-// 																<button class="btn btn-success done-button">Mark As Done</button>
-//                                 <button class="btn btn-danger delete-button">Delete</button>
-// 													  </div>                    
-//                           </div>
-//                         </div>								
-//                        </div>				
-//                       </li>`;
 
-// 	return htmlTask;
-// };
 // console.log(createTaskHtml(1, "mop", "mop over", "davis", "07/06/2003", "todo"));
 
 //=========================================================

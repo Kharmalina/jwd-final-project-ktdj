@@ -61,10 +61,7 @@ newTaskForm.addEventListener("submit", (e) => {
     else {
 			newTask.addTask(name, description, assignedTo, dueDate);
 			newTask.render(); //step 5.3.2
-			name = ""; //******* not clearing form *********/
-			description = "";
-			assignedTo = "";
-			dueDate = "";
+	    newTaskForm.reset();   //This will clear form
 			errorMessage.style.display = "none";
 		}
   }
@@ -75,28 +72,32 @@ newTaskForm.addEventListener("submit", (e) => {
 
 //Step 7.1 is the #id used in index.html for ul tag
 //step 7.2 this is the id form step 7.1
+// 
 const tasksListId = document.querySelector("#tasksList");
 
 //step 7.3
-
+//this will effect the createTaskHtml
 // Add an 'onclick' event listener to the Tasks List
 tasksListId.addEventListener('click', (e) => {
+
   // Check if a "Mark As Done" button was clicked
   if (e.target.classList.contains('done-button')) {
-    // Get the parent Task
-    const parentTask = e.target.parentElement.parentElement;
-console.log(parentTask)
+
+    // Get the parent Task(each .parentEllement move up selector by one parent)
+    const parentTask = e.target.parentElement.parentElement.parentElement;//had to use 3 insted off 2 ?)
+    console.log(parentTask)
+    
     // Get the taskId of the parent Task.
     const taskId = Number(parentTask.dataset.taskId);
 
     // Get the task from the TaskManager using the taskId
-    const taskCardInfo = newTask.getTaskById(taskId);
-
+    const taskCardInfo = newTask.getTaskById(taskId); 
+        //taskId changes to data-task-id =${id} in the createTaskHtml function
     // Update the task status to 'DONE'
     taskCardInfo.status = "DONE";
 
     // Render the tasks
-    newTask.render();
+    newTask.render(); //will re diaply the taske with changes
   }
 });
 
