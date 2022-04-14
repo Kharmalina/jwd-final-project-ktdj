@@ -65,54 +65,49 @@
                 <div class="mx-auto" style="width: 70%;">
                   <div class="card text-dark bg-light add-task">
       
-                      <form id = 'form2'>
+                      <form id="newTaskForm">
                           <h1 class="card-header" id="addtask">Add a Task</h1>
           
                         <section class="card-body text-dark">
                           <div class="add-task">
                               <label for="name" class="form-label">Name</label>
-                              <input type="text" class="form-control" id="name" aria-describedby="name-of-task" placeholder="Name of Task">
+                              <input type="text" class="form-control" id="newTaskNameInput" aria-describedby="name-of-task" placeholder="Name of Task">
                           </div>
           
                           <br>
           
                           <div class="add-task">
                               <label for="description" class="form-label">Description</label>
-                              <input type="text" class="form-control" id="description" aria-describedby="description-of-task" placeholder="Description of Task" >
+                              <input type="text" class="form-control" id="newTaskDescription" aria-describedby="description-of-task" placeholder="Description of Task" >
                           </div>
           
                           <br>
           
                           <div class="add-task">
                               <label for="assign" class="form-label">Assigned To</label>
-                              <input type="text" class="form-control" id="assign" aria-describedby="assigned-to" placeholder="Task Assigned To">
+                              <input type="text" class="form-control" id="newTaskAssignedTo" aria-describedby="assigned-to" placeholder="Task Assigned To">
                           </div>
           
                           <br>
           
                           <div class="add-task">
                               <label for="due-date" class="form-label">Due Date</label>
-                              <input type="date" class="form-control" id="due-date" aria-describedby="due-date-of-task">
+                              <input type="date" class="form-control" id="newTaskDueDate" aria-describedby="due-date-of-task">
                           </div>
           
                           <br>
           
-                          <div class="add-task">
+                          <!-- <div class="add-task">
                               <label for="status" class="form-label">Status</label>
-                              <input type="text" list="task-status" class="form-control" id="status" aria-describedby="status-of-task" placeholder="Status of Task" 3>
-                              <datalist id="task-status">
-                                  <option value="IN PROGRESS"></option>
-                                  <option value="DONE"></option>
-                                  <option value="REVIEW"></option>
-                                  <option value="STARTED"></option> 
-                                </datalist>      
-                          </div>
-      
+                              <input type="text" list="task-status" class="form-control" aria-describedby="status-of-task" placeholder="Status of Task" 
+                              id="newTaskStatus">                          </div>    
+       -->
                           <br>
       
                           <div class="task-add-button">
-                              <button id="submitBtn" type="submit" class="btn btn-primary">Submit</button>  
+                              <button id="submitBtn" type="submit" class="btn btn-primary">Submit</button>                              
                           </div>
+                          <div id ="alertMessage"></div> </div>
                          </div>   
                         </section>  
                       </form> 
@@ -127,108 +122,13 @@
         <br><br><br><br>    
         <div class="container bg-* d-grid gap-4">
             <div id="taskmanager"><h1 class="text-white">Task Manager</h1></div>
-          <div class="row g-4 row d-flex justify-content-center">
-           <div class="col-12 col-md-6 col-lg-4">
-               <div class="card g-4">
-                  <div class="card-body">
-                    <!--================ Task 1 =================--> 
-                    <p class="card-title">Task 1</p>
-                    <p class="card-text">Name: Kharmalina Wireframe</p>
-                    <p class="card-text">Description: Create a wireframe in Figma and share with team</p>
-                    <p class="card-text">Assigned To: Kharmalina </p>
-                    <p class="card-text">Due Date: 02/14/2022</p>
-                    <p class="card-text">Status: DONE</p>
-                    <div class="btn-group"><a href="#" class="btn btn-primary">Edit</a></div>
-                    <div class="btn-group"><a href="#" class="btn btn-primary">Delete</a></div>
-                   </div>
-                </div>
-             </div>
-             <div class="col-12 col-md-6 col-lg-4">
-                <div class="card">
-                   <div class="card-body">
-                      <!--==================== Task 2 =====================--> 
-                     <p class="card-title">Task 2</p>
-                     <p class="card-text">Name: Create GitHub Repo</p>
-                     <p class="card-text">Description: Create a Private GitHub Repo & add my team as collaborators</p>
-                     <p class="card-text">Assigned To: Kharmalina </p>
-                     <p class="card-text">Due Date: 02/14/2022</p>
-                     <p class="card-text">Status: DONE</p>
-                     <div class="btn-group"><a href="#" class="btn btn-primary">Edit</a></div>
-                     <div class="btn-group"><a href="#" class="btn btn-primary">Delete</a></div>
-                   </div>
-                 </div>
-              </div>
-           </div>
-           <div class="row g-4 row d-flex justify-content-center">
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="card">
-                   <div class="card-body">
-                       <!--=============== Task 3 ==================--> 
-                     <p class="card-title">Task 3</p>
-                     <p class="card-text">Name: Bootstrap and HTML5</p>
-                     <p class="card-text">Description: Create branches and contribute to the repo</p>
-                     <p class="card-text">Assigned To: Tanya, Davis, Kharmalina and Jacob </p>
-                     <p class="card-text">Due Date: 02/14/2022</p>
-                     <p class="card-text">Status: IN PROGRESS</p>
-                     <div class="btn-group"><a href="#" class="btn btn-primary">Edit</a></div>
-                    <div class="btn-group"><a href="#" class="btn btn-primary">Delete</a></div>
-                   </div>
-                 </div>
-              </div>
-              <div class="col-12 col-md-6 col-lg-4">
-                 <div class="card">
-                    <div class="card-body">
-                        <!--=============== Task 4 =================--> 
-                      <p class="card-title">Task 4</p>
-                      <p class="card-text">Name: Team Meeting Feb. 12</p>
-                      <p class="card-text">Description: Meet up with the team to discuss Sprint 1</p>
-                      <p class="card-text">Assigned To: Davis, Tanya, Kharmalina and Jacob </p>
-                      <p class="card-text">Due Date: 02/14/2022</p>
-                      <p class="card-text">Status: IN PROGRESS</p>
-                      <div class="btn-group"><a href="#" class="btn btn-primary">Edit</a></div>
-                    <div class="btn-group"><a href="#" class="btn btn-primary">Delete</a></div>
-                   </div>
-                  </div>
-               </div>
-            </div>
-            <div class="row g-4 row d-flex justify-content-center">
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="card">
-                       <div class="card-body">
-                          <!--=============== Task 5 =================-->
-                         <p class="card-title">Task 5</p>
-                         <p class="card-text">Name: Self Care</p>
-                         <p class="card-text">Description: Take time away from coding to do something you enjoy</p>
-                         <p class="card-text">Assigned To: Jacob, Kharmalina, Davis and Tanya</p>
-                         <p class="card-text">Due Date: 02/14/2022</p>
-                         <p class="card-text">Status: IN PROGRESS</p>
-                         <div class="btn-group"><a href="#" class="btn btn-primary">Edit</a></div>
-                    <div class="btn-group"><a href="#" class="btn btn-primary">Delete</a></div>
-                   </div>
-                    </div>
-                 </div>
-                 <div class="col-12 col-md-6 col-lg-4">
-                    <div class="card">
-                       <div class="card-body">
-                             <!--================ Task 6 ===================-->
-                         <p class="card-title">Task 6</p>
-                         <p class="card-text">Name: Motivation</p>
-                         <p class="card-text">Description: Don't Give Up! Persistence is Key!</p>
-                         <p class="card-text">Assigned To: Everyone at GenUSA jwd-flex-cohort2 </p>
-                         <p class="card-text">Due Date: 04/21/2022</p>
-                         <p class="card-text">Status: IN PROGRESS</p>
-                         <div class="btn-group"><a href="#" class="btn btn-primary">Edit</a></div>
-                    <div class="btn-group"><a href="#" class="btn btn-primary">Delete</a></div>
-                   </div>
-                 </div>
-               </div>
-            </div>
+            <ul id ="tasksList"></ul>  <!--Where code from createTaskHtml function place code-->        
         </div>
     <br>
 </main>    
 <footer>
     <br>
-    <p>Made by Kharmalina, Davis, Tanya & Jacob</p>
+    <p>Made by Kharmalina, Davis & Tanya </p>
     <span>&copy; 2022</span>
   </footer>
     
@@ -241,7 +141,41 @@
     <script src="js/taskManager.js"></script>
     <script src="js/index.js"></script>
 </body>
-
-
-
 </html>
+
+
+    <!-- // validation code
+    const validFormFieldInput = () => {
+        if (!newTaskNameInput.value || !newTaskDescription.value || !newTaskAssignedTo.value || !newTaskDueDate.value) {
+            let errorList = [];
+            if (!newTaskNameInput.value) {
+                errorList.push(" Name");
+            }
+            if (!newTaskDescription.value) {
+                errorList.push(" Description");
+            }
+            if (!newTaskAssignedTo.value) {
+                errorList.push(" Assigned To");
+            }
+            if (!newTaskDueDate.value) {
+                errorList.push(" Due Date");
+            }
+            alert.classList.add("invalid-form-alert");
+            alert.classList.remove("hide-alert");
+            alert.innerHTML = `All fields are required! Please check the following field(s):${errorList.toString()}`;
+            return false;
+        }
+        else {
+            if (alert.classList.contains("invalid-form-alert")) {
+                alert.classList.remove("invalid-form-alert");
+                console.log("yay");
+            }
+            if (!alert.classList.contains("hide-alert")) {
+                alert.classList.add("hide-alert");
+            }
+            console.log(`name: ${newTaskNameInput.value} description: ${newTaskDescription.value} assigned: ${newTaskAssignedTo.value} due date: ${newTaskDueDate.value}`);
+            return true;
+        } 
+    
+    
+    }

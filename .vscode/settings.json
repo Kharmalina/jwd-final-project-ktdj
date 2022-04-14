@@ -4,9 +4,15 @@
     "activityBar.background": "#520659",
     "titleBar.activeBackground": "#73097D",
     "workbench.colorCustomizations": {
+<<<<<<< HEAD
       "activityBar.background": "#071493",
       "titleBar.activeBackground": "#0A1CCE",
       "titleBar.activeForeground": "#F9F9FF"
+=======
+      "activityBar.background": "#253201",
+      "titleBar.activeBackground": "#344601",
+      "titleBar.activeForeground": "#F4FED7"
+>>>>>>> d5c9d2a897298d5c372adbbc4779a20188d27722
     },
 
   }
