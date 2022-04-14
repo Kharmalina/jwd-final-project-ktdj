@@ -3,8 +3,8 @@
 // =======Step 4: Adding Tasks With The Form =======
 
 const newTask = new TaskManager(); //Initialization of New Task
-newTask.load(); //step 8 need here to keep task card on screen
-newTask.render();//step 8 need here to keep task card on screen
+newTask.load(); //step 8 will load all task saved o local storage(values only)
+newTask.render();//step 8 need here load card structure when refresh page(if saved in local)
 
 /*===============Test to see if works ======================
 newTask.addTask("mop", "mopping", "davis", 07 / 08 / 1989);
@@ -12,12 +12,12 @@ console.log(newTask.tasks)
 =========================================================*/
 
 //Step 4.1
-const newTaskForm = document.querySelector("#newTaskForm");
+const newTaskForm = document.querySelector("#newTaskForm"); //(select form )
 
-// Add an 'onsubmit' event listener
+// Add an 'onsubmit' event listener(1 of 2)
 //Step 4.2/4.3
 newTaskForm.addEventListener("submit", (e) => {
-	// Prevent default action
+	// Prevent default action(so form won't submit)
 	e.preventDefault();
 
 	// Select the inputs
@@ -66,7 +66,7 @@ const tasksListId = document.querySelector("#tasksList");
 
 //step 7.3  =================== another Click event (will change TODO to DONE) ==============
 //this will effect the createTaskHtml
-// Add an 'onclick' event listener to the Tasks List
+// Add an 'onclick' event listener to the Tasks List(2 of 2)
 tasksListId.addEventListener('click', (e) => {
 
   // Check if a "Mark As Done" button was clicked

@@ -72,6 +72,10 @@ class TaskManager {
 
   /*===========================================
  create a *getTaskById() method**. Step7.4.2
+ can retive task in local memory :
+ newTask.getTaskById(9);
+ //{id: 9, name: 'HTML', description: 'HTML Page',
+  assignedTo: 'Tanya', dueDate: '2022-04-20', …}
  ===========================================*/
 
   getTaskById(taskId) {
@@ -94,6 +98,7 @@ class TaskManager {
 
   /*===================================
  create a **render() method**. Step5.2
+ render is how it will show up on your html
  ======================================*/
   render() {
     const tasksHtmlList = []; //Step 5.2.2
@@ -117,14 +122,14 @@ class TaskManager {
         formattedDate,
         task.status
       );
-
       tasksHtmlList.push(taskHtml); //step 5.2.3.v
+	  
     } //for loop() ending
-
-    const tasksHtml = tasksHtmlList.join("<br>"); ////step 5.2.4
+    
+    const tasksHtml = tasksHtmlList.join("<br>"); //step 5.2.4
 
     const tasksList = document.querySelector("#tasksList");
-    tasksList.innerHTML = tasksHtml;
+    tasksList.innerHTML = tasksHtml;//add too html <ul></ul>(used variable above to select the ul tag)
   } //render() ending
 
   //======== Task 8: Persisting Tasks to LocalStorage =======
@@ -134,7 +139,7 @@ class TaskManager {
     this.tasks(array) and this.current.Id(number) with JASON,stringify
    =================================================================*/
 
-  //create the save method
+  //create the save method(how it will be stored in local storage)
   //step 8.1.1
 
   save() {
@@ -162,10 +167,11 @@ class TaskManager {
 
   //======= step 8.2  ====
 
-  //create the load method()
+  //create the load method() will get values from local storage
   load() {
-    // Check if any tasks are saved in localStorage
+    // Check if any tasks are saved in localStorage(taks come from save())
     if (localStorage.getItem("tasks")) {
+
       // Get the JSON string of tasks in localStorage
       const tasksJson = localStorage.getItem("tasks");
 
@@ -197,12 +203,12 @@ Task 9: Deleting Tasks
       // Get the current task in the loop
       const task = this.tasks[i];
 
-      // Check if the task id is not the task id passed in as a parameter
+      // Check if the task id is not the task.id passed in as a parameter
       if (task.id !== taskId) {
         //this taskId is local to this method
 
         // Push the task to the newTasks array
-        newTasks.push(task); //task from line 204(note change newTaks form other)
+        newTasks.push(task); //task from 7 lines above
       }
     }
     // Set this.tasks to newTasks
