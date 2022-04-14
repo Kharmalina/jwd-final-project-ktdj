@@ -86,7 +86,7 @@ if (event.target.classList.contains("done-button")) {
     const taskCardInfo = taskManager.getTaskById(taskId);
     taskCardInfo.status = "DONE";
 
-    taskCardInfo.save();
+    taskManager.save();
 
     taskManager.render();
 }
