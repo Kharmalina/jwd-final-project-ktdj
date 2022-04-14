@@ -1,4 +1,4 @@
-/<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <!------Google Font------->
@@ -42,184 +42,171 @@
           <div class="container bg-*">
             <div class="row">    
                 <div class="col-12 col-sm-12 col-md-12">
-                  <!--Add a Task - Bootstrap card and forms: Name, Descrip., AssignedTo, DueDate, Status-->  
+                  <!--Add a Task - Bootstrap card and forms: Name, Description., AssignedTo, DueDate, Status-->  
                 <div class="mx-auto" style="width: 70%;">
                   <div class="card text-dark bg-light add-task">
       
-                      <form>
-                          <h1 class="card-header" id="newTaskForm">Add a Task</h1>
+                      <form id="newTaskForm">
+                          <h1 class="card-header" id="addtask">Add a Task</h1>
           
                         <section class="card-body text-dark">
                           <div class="add-task">
-                              <label for="name" class="form-label">Name</label>
-                              <input type="text" class="form-control" id="name" aria-describedby="name-of-task" placeholder="Name of Task" required>
+                              <label for="newTaskNameInput" class="form-label">Name</label>
+                              <input id="newTaskNameInput" type="text" class="form-control" aria-describedby="name-of-task" placeholder="Name of Task">
+                              <!-- <div class="alert alert-danger hide-alert invalid-form-alert" id="alert" role="alert">
+                              </div> -->
                           </div>
           
                           <br>
           
                           <div class="add-task">
-                              <label for="description" class="form-label">Description</label>
-                              <input type="text" class="form-control" id="newTaskNameInput" aria-describedby="description-of-task" placeholder="Description of Task" required>
+                              <label for="newTaskDescription" class="form-label">Description</label>
+                              <textarea type="text" class="form-control" id="newTaskDescription" placeholder="Description of Task"></textarea>
+                              <!-- <div class="alert alert-danger hide-alert invalid-form-alert" id="alert" role="alert">
+                              </div> -->
                           </div>
           
                           <br>
           
                           <div class="add-task">
-                              <label for="assign" class="form-label">Assigned To</label>
-                              <input type="text" class="form-control" id="newTaskAssignedTo" aria-describedby="assigned-to" placeholder="Task Assigned To" required>
+                              <label for="newTaskAssignedTo" class="form-label">Assigned To</label>
+                              <input id="newTaskAssignedTo" type="text" class="form-control" aria-describedby="assigned-to" placeholder="Task Assigned To">
+                              <!-- <div class="alert alert-danger hide-alert invalid-form-alert" id="alert" role="alert">
+                              </div> -->
                           </div>
           
                           <br>
           
                           <div class="add-task">
-                              <label for="due-date" class="form-label">Due Date</label>
-                              <input type="date" class="form-control" id="newTaskDueDate" aria-describedby="due-date-of-task" required>
+                              <label for="newTaskDueDate" class="form-label">Due Date</label>
+                              <input id="newTaskDueDate" type="date" class="form-control" aria-describedby="due-date-of-task">
+                              <!-- <div class="alert alert-danger hide-alert invalid-form-alert" id="alert" role="alert">
+                              </div> -->
                           </div>
           
                           <br>
           
-                          <div class="add-task">
+                          <!-- <div class="add-task">
                               <label for="status" class="form-label">Status</label>
-                              <input type="text" list="task-status" class="form-control" id="status" aria-describedby="status-of-task" placeholder="Status of Task" required>
+                              <input name="status" type="text" list="task-status" class="form-control" id="status" aria-describedby="status-of-task" placeholder="Status of Task">
                               <datalist id="task-status">
-                                  <option value="IN PROGRESS"></option>
-                                  <option value="DONE"></option>
-                                  <option value="REVIEW"></option>
-                                  <option value="STARTED"></option> 
-                                </datalist>      
-                          </div>
+                                  <option value="IN PROGRESS">IN PROGRESS</option>
+                                  <option value="DONE">DONE</option>
+                                  <option value="REVIEW">REVIEW</option>
+                                  <option value="STARTED">STARTED</option> 
+                                </datalist>   
+                                <div class="error">
+                                </div>   
+                          </div> -->
+
+                          <!-- <div class="add-task">
+                            <label for="status" class="form-label">Status</label>
+                            <select name="status" id="status">
+                                <option value="IN PROGRESS">IN PROGRESS</option>
+                                <option value="DONE">DONE</option>
+                                <option value="REVIEW">REVIEW</option>
+                                <option value="STARTED">STARTED</option>
+                            </select>
+                              <div class="error">
+                              </div>   
+                        </div> -->
       
                           <br>
-      
+
                           <div class="task-add-button">
-                              <button type="submit" class="btn btn-primary">Submit</button>  
+                              <button id="submit-btn" type="submit" class="btn btn-primary">Submit Task!</button>  
                           </div>
-                         </div>   
+                          <br>
+                          <div class="alert alert-danger hide-alert" id="alert" role="alert">
+                            Error!
+                          </div>
+                        </div>   
                         </section>  
                       </form> 
                     </div> 
                   </div>  
-                 </div> 
+                </div> 
               </div>
           </div>    
             
     
         <!------------------ Task Manager --------------------->
-        <br><br><br><br>    
-        <div class="container bg-* d-grid gap-4">
-            <div id="taskmanager"><h1 class="text-white">Task Manager</h1></div>
-          <div class="row g-4 row d-flex justify-content-center">
-           <div class="col-12 col-md-6 col-lg-4">
-               <div class="card g-4">
-                  <div class="card-body">
-                    <!--================ Task 1 =================--> 
-                    <p class="card-title">Task 1</p>
-                    <p class="card-text">Name: Kharmalina Wireframe</p>
-                    <p class="card-text">Description: Create a wireframe in Figma and share with team</p>
-                    <p class="card-text">Assigned To: Kharmalina </p>
-                    <p class="card-text">Due Date: 02/14/2022</p>
-                    <p class="card-text">Status: DONE</p>
-                    <div class="btn-group"><a href="#" class="btn btn-primary">Edit</a></div>
-                    <div class="btn-group"><a href="#" class="btn btn-primary">Delete</a></div>
-                   </div>
+<br><br><br><br>    
+<div class="container bg-* d-grid gap-4">
+    <div id="taskmanager"><h1 class="text-white">Task Manager</h1>
+    <ul class="list-group" id="tasksList"></ul>
+      <!-- <li class="d-flex row g-4 justify-content-center align-items-center">
+        <div class="col-12 col-md-8 col-lg-9">
+          <div class="card g-4">
+              <div class="card-body"> 
+                <div class="d-flex w-100 align-items-center justify-content-between align-items-center">
+                  <h4 class="card-text"><b>Name:</b> Kharmalina Wireframe</h4>
+                <span class="badge badge-danger">TODO</span>
                 </div>
-             </div>
-             <div class="col-12 col-md-6 col-lg-4">
-                <div class="card">
-                   <div class="card-body">
-                      <!--==================== Task 2 =====================--> 
-                     <p class="card-title">Task 2</p>
-                     <p class="card-text">Name: Create GitHub Repo</p>
-                     <p class="card-text">Description: Create a Private GitHub Repo & add my team as collaborators</p>
-                     <p class="card-text">Assigned To: Kharmalina </p>
-                     <p class="card-text">Due Date: 02/14/2022</p>
-                     <p class="card-text">Status: DONE</p>
-                     <div class="btn-group"><a href="#" class="btn btn-primary">Edit</a></div>
-                     <div class="btn-group"><a href="#" class="btn btn-primary">Delete</a></div>
-                   </div>
-                 </div>
+                <h4 class="card-text"><b>Description:</b> Create a wireframe in Figma and share with team</h4>
+                <h4 class="card-text"><b>Assigned To:</b> Kharmalina </h4>
+                <h4 class="card-text"><b>Due Date:</b> 02/14/2022</h4>
+                  <br>
               </div>
-           </div>
-           <div class="row g-4 row d-flex justify-content-center">
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="card">
-                   <div class="card-body">
-                       <!--=============== Task 3 ==================--> 
-                     <p class="card-title">Task 3</p>
-                     <p class="card-text">Name: Bootstrap and HTML5</p>
-                     <p class="card-text">Description: Create branches and contribute to the repo</p>
-                     <p class="card-text">Assigned To: Tanya, Davis, Kharmalina and Jacob </p>
-                     <p class="card-text">Due Date: 02/14/2022</p>
-                     <p class="card-text">Status: IN PROGRESS</p>
-                     <div class="btn-group"><a href="#" class="btn btn-primary">Edit</a></div>
-                    <div class="btn-group"><a href="#" class="btn btn-primary">Delete</a></div>
-                   </div>
-                 </div>
-              </div>
-              <div class="col-12 col-md-6 col-lg-4">
-                 <div class="card">
-                    <div class="card-body">
-                        <!--=============== Task 4 =================--> 
-                      <p class="card-title">Task 4</p>
-                      <p class="card-text">Name: Team Meeting Feb. 12</p>
-                      <p class="card-text">Description: Meet up with the team to discuss Sprint 1</p>
-                      <p class="card-text">Assigned To: Davis, Tanya, Kharmalina and Jacob </p>
-                      <p class="card-text">Due Date: 02/14/2022</p>
-                      <p class="card-text">Status: IN PROGRESS</p>
-                      <div class="btn-group"><a href="#" class="btn btn-primary">Edit</a></div>
-                    <div class="btn-group"><a href="#" class="btn btn-primary">Delete</a></div>
-                   </div>
-                  </div>
-               </div>
-            </div>
-            <div class="row g-4 row d-flex justify-content-center">
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="card">
-                       <div class="card-body">
-                          <!--=============== Task 5 =================-->
-                         <p class="card-title">Task 5</p>
-                         <p class="card-text">Name: Self Care</p>
-                         <p class="card-text">Description: Take time away from coding to do something you enjoy</p>
-                         <p class="card-text">Assigned To: Jacob, Kharmalina, Davis and Tanya</p>
-                         <p class="card-text">Due Date: 02/14/2022</p>
-                         <p class="card-text">Status: IN PROGRESS</p>
-                         <div class="btn-group"><a href="#" class="btn btn-primary">Edit</a></div>
-                    <div class="btn-group"><a href="#" class="btn btn-primary">Delete</a></div>
-                   </div>
-                    </div>
-                 </div>
-                 <div class="col-12 col-md-6 col-lg-4">
-                    <div class="card">
-                       <div class="card-body">
-                             <!--================ Task 6 ===================-->
-                         <p class="card-title">Task 6</p>
-                         <p class="card-text">Name: Motivation</p>
-                         <p class="card-text">Description: Don't Give Up! Persistence is Key!</p>
-                         <p class="card-text">Assigned To: Everyone at GenUSA jwd-flex-cohort2 </p>
-                         <p class="card-text">Due Date: 04/21/2022</p>
-                         <p class="card-text">Status: IN PROGRESS</p>
-                         <div class="btn-group"><a href="#" class="btn btn-primary">Edit</a></div>
-                    <div class="btn-group"><a href="#" class="btn btn-primary">Delete</a></div>
-                   </div>
-                 </div>
-               </div>
-            </div>
+          </div>
         </div>
+      </li> -->
+    
+
+    <!-- <ul id="tasksList">
+      <li class="row g-4 row d-flex justify-content-center">
+        <div class="col-12 col-md-8 col-lg-8">
+          <div class="card g-4">
+              <div class="card-body"> 
+                <h4 class="card-text"><b>Name:</b> Kharmalina Wireframe</h4>
+                <h4 class="card-text"><b>Description:</b> Create a wireframe in Figma and share with team</h4>
+                <h4 class="card-text"><b>Assigned To:</b> Kharmalina </h4>
+                <h4 class="card-text"><b>Due Date:</b> 02/14/2022</h4>
+                <label for="status" class="form-label" style="font-weight: 400; font-size: 25px;"><b>Status:</b></label>
+                  <select name="status" id="status">
+                      <option value="IN PROGRESS">IN PROGRESS</option>
+                      <option value="DONE">DONE</option>
+                      <option value="TODO">TODO</option>
+                      <option value="STARTED">STARTED</option>
+                  </select>
+                  <br>
+                <div class="btn-group"><a href="#" class="btn btn-primary">Edit</a></div>
+                <div class="btn-group"><a href="#" class="btn btn-primary">Delete</a></div>
+              </div>
+          </div>
+        </div>
+      </li>
+    </ul> -->
+  </div>
+</div>
     <br>
 </main>    
 
-  <script src="js/taskManager.js"></script>
-  <script src="js/index.js"></script>
+
+    
     <!------ Javascript Bootstrap tags------->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <!-- External JS files -->
+    <script src="js/taskManager.js"></script>
+    <script src="js/index.js"></script>
 </body>
 
 <footer>
     <br>
-    <p>Made by Kharmalina, Davis, Tanya & Jacob</p>
+    <p>Created by Kharmalina, Davis, Tanya & Jacob &#129505; &#128187;</p>
     <span>&copy; 2022</span>
   </footer>
 
 </html>
+
