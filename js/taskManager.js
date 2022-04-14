@@ -123,7 +123,7 @@ class TaskManager {
 			tasksHtmlList.push(taskHtml); //step 5.2.3.v
 		} //for loop() ending
 
-		const tasksHtml = tasksHtmlList.join("/n"); ////step 5.2.4
+		const tasksHtml = tasksHtmlList.join("<br>"); ////step 5.2.4
 
 		const tasksList = document.querySelector("#tasksList");
 		tasksList.innerHTML = tasksHtml;
@@ -166,17 +166,56 @@ class TaskManager {
 
 	//======= step 8.2  ====
 
+
 	//create the load method()
   load() {
     // Check if any tasks are saved in localStorage
     if (localStorage.getItem('tasks')) {
+
       // Get the JSON string of tasks in localStorage
       const tasksJson = localStorage.getItem('tasks');
+
+			    // Convert it to an array and store it in our TaskManager
+            this.tasks = JSON.parse(tasksJson);      
     }
+
+		 // Check if the currentId is saved in localStorage
+        if (localStorage.getItem('currentId')) {
+
+            // Get the currentId string in localStorage
+            const currentId = localStorage.getItem('currentId');
+
+            // Convert the currentId to a number and store it in our TaskManager
+            this.currentId = Number(currentId);
+        }
   }//load() ending
 
+/*==============================================================
+Task 9: Deleting Tasks
+==============================================================*/
+	//create the load method()
 
-} //class ending }
+	deleteTask(taskId){
+// Create an empty array and store it in a new variable, newTasks
+     let newTasks = [];
+
+ //Loop over the tasks, in the loop
+   for(let i = 0; i < this.tasks.length; i ++){
+		   // Get the current task in the loop
+		 const task = this.tasks[i];
+
+ // Check if the task id is not the task id passed in as a parameter
+    if(task.id !== taskId){ //this taskId is local to this method
+
+			  // Push the task to the newTasks array
+      newTasks.push(task) //task from line 204(note change newTaks form other)
+		}
+	}
+		 // Set this.tasks to newTasks
+		 this.tasks = newTasks;
+	 }//end of delete()
+
+} //class ending 
 
 
 

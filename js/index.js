@@ -1,21 +1,10 @@
-//const newTask = new TaskManager();// step 2.1.b
-// console.log(newTask.currentId);              //step 2.2.b
 
-//Testing the addTask() in our taskManager.js file
-
-// const newTask2 = new TaskManager(this.currentId);
-// newTask2.addTask(
-// 		"mop",
-//     "Prepare a healthy serving of pancakes for the family tonight",
-//     "Davis",
-//     "04/07/2022"
-// 	)
-
-//   console.log(newTask2)
 
 // =======Step 4: Adding Tasks With The Form =======
 
 const newTask = new TaskManager(); //Initialization of New Task
+newTask.load(); //step 8 need here to keep task card on screen
+newTask.render();//step 8 need here to keep task card on screen
 
 /*===============Test to see if works ======================
 newTask.addTask("mop", "mopping", "davis", 07 / 08 / 1989);
@@ -37,7 +26,7 @@ newTaskForm.addEventListener("submit", (e) => {
 	const newTaskAssignedTo = document.querySelector("#newTaskAssignedTo");
 	const newTaskDueDate = document.querySelector("#newTaskDueDate");
 	const errorMessage = document.querySelector("#alertMessage");
-	//needed to add somewhere!!!!!!!!!!
+	
 
 	// 	/*Step 4.3 We need to get the values of input from form
 	//   we already targeted them with the variables above
@@ -61,7 +50,7 @@ newTaskForm.addEventListener("submit", (e) => {
     else {
 	  newTask.addTask(name, description, assignedTo, dueDate);
 	  newTask.render(); //step 5.3.2
-	  // newTaskForm.reset();   //This will clear form
+	  newTaskForm.reset();   //This will clear form
 	  errorMessage.style.display = "none";
 	}
   }
@@ -75,7 +64,7 @@ newTaskForm.addEventListener("submit", (e) => {
 // 
 const tasksListId = document.querySelector("#tasksList");
 
-//step 7.3
+//step 7.3  =================== another Click event (will change TODO to DONE) ==============
 //this will effect the createTaskHtml
 // Add an 'onclick' event listener to the Tasks List
 tasksListId.addEventListener('click', (e) => {
@@ -96,8 +85,13 @@ tasksListId.addEventListener('click', (e) => {
     // Update the task status to 'DONE'
     taskCardInfo.status = "DONE";
 
+		//Will will save task card information to local storage
+		newTask.save();
+
     // Render the tasks
-    newTask.render(); //will re diaply the taske with changes
+    newTask.render(); //will rediaplay  the tasks with changed
   }
 });
+
+
 
