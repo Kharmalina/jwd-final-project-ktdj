@@ -3,7 +3,8 @@
 //done-button class use for tasksListId.addEventListener
 const createTaskHtml = (id, name, description, assignedTo, dueDate, status) => {
 	const htmlTask1 = `
-    <li data-task-id=${id} class="d-flex row g-4 justify-content-center align-items-center">
+    <li data-task-id=${id} 
+    class="d-flex row g-4 justify-content-center align-items-center">
         <div class="col-12 col-md-8 col-lg-5">
         <div class="card g-4" data-task-id=${id}>
              <div class="card-body"> 
@@ -86,7 +87,7 @@ class TaskManager {
       // Get the current task in the loop
       const task = this.tasks[i];
 
-      // Check if its the right task by comparing the task.id(from the addtask()) is === to taskID(this will be the )
+      // Check if its the right task by comparing the task.id(from the add .task()) is === to taskID(this will be the )
       if (task.id === taskId) {
         //store task in the found task variable
         foundTask = task;
@@ -213,5 +214,9 @@ Task 9: Deleting Tasks
     }
     // Set this.tasks to newTasks
     this.tasks = newTasks;
+
+    console.log(newTasks);
   } //end of delete()
 } //class ending
+
+
