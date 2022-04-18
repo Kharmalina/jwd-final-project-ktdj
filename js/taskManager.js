@@ -3,31 +3,23 @@
 //done-button class use for tasksListId.addEventListener
 const createTaskHtml = (id, name, description, assignedTo, dueDate, status) => {
 	const htmlTask1 = `
-    <li data-task-id=${id} 
+    <li
     class="d-flex row g-4 justify-content-center align-items-center">
         <div class="col-12 col-md-8 col-lg-5">
         <div class="card g-4" data-task-id=${id}>
              <div class="card-body"> 
                 <div class="d-flex w-100 align-items-center justify-content-between align-items-center">
                 <h4 class="card-text"><b>Name:</b> ${name}</h4>
-                <h4><span class="badge ${
-                  status === "TODO" ? "bg-danger" : "bg-success"
-                }">${status}</span></h4>
+                <h4><span class="badge ${status === "TODO" ? "bg-danger" : "bg-success"}">${status}</span></h4>
                 </div>
                 <h4 class="card-text"><b>Description:</b> ${description}</h4>
                 <h4 class="card-text"><b>Assigned To:</b> ${assignedTo}</h4>
                 <h4 class="card-text"><b>Due Date:</b> ${dueDate}</h4>
                 <br>
             <div class="bottomTaskButtons">  
-			    <button class="btn btn-danger  ${
-				status === "TODO" ? "invisible" : "invisible"
-			  }">Delete</button>                
-                <button type="button" class="btn btn-success done-button ${
-                       status === "TODO" ? "visible" : "invisible"
-                     }">Mark as Done</button>
-					 <button class="btn btn-danger delete-button ${
-						status === "TODO" ? "invisible" : "visible"
-					  }">Delete</button>                                   
+			        <button class="btn btn-danger  ${status === "TODO" ? "invisible" : "invisible"}">Delete</button>                
+              <button type="button" class="btn btn-success done-button ${status === "TODO" ? "visible" : "invisible"}">Mark as Done</button>
+					    <button class="btn btn-danger delete-button ${status === "TODO" ? "invisible" : "visible"}">Delete</button>                                   
             </div>      
             </div>
         </div>
@@ -130,7 +122,7 @@ class TaskManager {
     const tasksHtml = tasksHtmlList.join("<br>"); //step 5.2.4
 
     const tasksList = document.querySelector("#tasksList");
-    tasksList.innerHTML = tasksHtml;//add too html <ul></ul>(used variable above to select the ul tag)
+    tasksList.innerHTML = tasksHtml;//add too index.html <ul></ul>(used variable above to select the ul tag)
   } //render() ending
 
   //======== Task 8: Persisting Tasks to LocalStorage =======
@@ -206,11 +198,11 @@ Task 9: Deleting Tasks
 
       // Check if the task id is not the task.id passed in as a parameter
       if (task.id !== taskId) {
-        //this taskId is local to this method
+				//this taskId is the id from data-taskid from const htmlTask1 at the top.
 
-        // Push the task to the newTasks array
-        newTasks.push(task); //task from 7 lines above
-      }
+				// Push the task to the newTasks array
+				newTasks.push(task); //task from 7 lines above
+			}
     }
     // Set this.tasks to newTasks
     this.tasks = newTasks;
@@ -218,5 +210,10 @@ Task 9: Deleting Tasks
     console.log(newTasks);
   } //end of delete()
 } //class ending
+
+
+
+
+
 
 

@@ -3,7 +3,7 @@
 // =======Step 4: Adding Tasks With The Form =======
 
 const newTask = new TaskManager(); //Initialization of New Task
-newTask.load(); //step 8 will load all task saved o local storage(values only)
+newTask.load(); //step 8 will load all task saved in local storage(values only)
 newTask.render();//step 8 need here load card structure when refresh page(if saved in local)
 
 /*===============Test to see if works ======================
@@ -26,8 +26,8 @@ newTaskForm.addEventListener("submit", (e) => {
 	const newTaskAssignedTo = document.querySelector("#newTaskAssignedTo");
 	const newTaskDueDate = document.querySelector("#newTaskDueDate");
 	const errorMessage = document.querySelector("#alertMessage");
-	
 
+	//	//===== Validate our inputs variables  ======
 	// 	/*Step 4.3 We need to get the values of input from form
 	//   we already targeted them with the variables above
 	// so now we have to put their 'values' into another
@@ -39,60 +39,63 @@ newTaskForm.addEventListener("submit", (e) => {
 
 	//===== Validate our inputs function ======
 
-  const checkForBlanks = () => {
-    const errorList = [];
+	const checkForBlanks = () => {
+		const errorList = [];
 
-    if (!name || !description || !assignedTo || !dueDate) {
-      errorList.push(`ERROR !! Please fill in all fields.`);
-      errorMessage.style.color = "red";
-      errorMessage.innerHTML = `${errorList[0]}`;
-    }
-    else {
-	  newTask.addTask(name, description, assignedTo, dueDate);
-	  newTask.render(); //step 5.3.2
-	  newTaskForm.reset();   //This will clear form
-	  errorMessage.style.display = "none";
-	}
-  }
-  checkForBlanks(); //invoke the abive function
+		if (!name || !description || !assignedTo || !dueDate) {
+			errorList.push(`ERROR !! Please fill in all fields.`);
+			errorMessage.style.color = "red";
+			errorMessage.innerHTML = `${errorList[0]}`;
+		} else {
+			newTask.addTask(name, description, assignedTo, dueDate);
+			newTask.render(); //step 5.3.2
+			newTaskForm.reset(); //This will clear form
+			errorMessage.style.display = "none";
+		}
+	};
+	checkForBlanks(); //invoke the above function
 });
 
 //================  Task 7: Update A Task =====================
 
 //Step 7.1 is the #id used in index.html for ul tag
 //step 7.2 this is the id form step 7.1
-// 
+// this will control what happens to form after inputs entered.
+
 const tasksListId = document.querySelector("#tasksList");
 
-//step 7.3  =================== another Click event (will change TODO to DONE) ==============
+//step 7.3  === another Click event (will change TODO to DONE) ======
 //this will effect the createTaskHtml
 // Add an 'onclick' event listener to the Tasks List(2 of 2)
 tasksListId.addEventListener('click', (e) => {
 
-  // Check if a "Mark As Done" button was clicked
+  // ====Check if a "Mark As Done" button was clicked=====
   if (e.target.classList.contains('done-button')) {
+		// Get the parent Task(each .parentEllement move up selector by one parent)
+		const parentTask = e.target.parentElement.parentElement.parentElement; //had to use 3 insted off 2 bc id 3 section above 'done-button' class)
 
-    // Get the parent Task(each .parentEllement move up selector by one parent)
-    const parentTask = e.target.parentElement.parentElement.parentElement;//had to use 3 insted off 2 ?)
-    console.log(parentTask)
+		console.log(parentTask); //checking to see if worked.
+
+		// Get the taskId of the parent Task.
+		// Convert dataset.taskId from string to number
+		//and place in the getTaskBtId(taskId)
+		const taskId = Number(parentTask.dataset.taskId);
+
+		// Get the task from the TaskManager using the taskId
+    const taskCardInfo = newTask.getTaskById(taskId);
     
-    // Get the taskId of the parent Task.
-    const taskId = Number(parentTask.dataset.taskId);
+		//taskId changes to data-task-id =${id} in the createTaskHtml function
+		// Update the task status to 'DONE'
+		taskCardInfo.status = "DONE";
 
-    // Get the task from the TaskManager using the taskId
-    const taskCardInfo = newTask.getTaskById(taskId); 
-        //taskId changes to data-task-id =${id} in the createTaskHtml function
-    // Update the task status to 'DONE'
-    taskCardInfo.status = "DONE";
-
-		//Will will save task card information to local storage
+		//Will save task card information to local storage
 		newTask.save();
 
-    // Render the tasks
-    newTask.render(); //will rediaplay  the tasks with changed
-  }
+		// Render the tasks
+		newTask.render(); //will redisplay  the tasks with changes
+	}
 
-  // Check if a "Delete" button was clicked
+  // =========== Check if a "Delete" button was clicked ================
   //adding an if statment for the delete button
   if(e.target.classList.contains('delete-button')){//step 9.2
   
@@ -104,14 +107,13 @@ tasksListId.addEventListener('click', (e) => {
 
     //put the taskId as an arguement of delete() to delete taht task
     newTask.deleteTask(taskId);
-    	//Will will save task card information to local storage
+    	//Will save task card information to local storage
 		newTask.save();
 
     // Render the tasks
     newTask.render(); //will redisplay the task card
   }
 });
-
 
 
 
