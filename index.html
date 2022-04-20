@@ -36,9 +36,9 @@
                       </li>    
               </div>          
         </header>  
-      
+        <div id="addtask"></div>
           <br><br><br><br>
-
+          
           <div class="container bg-*">
             <div class="row">    
                 <div class="col-12 col-sm-12 col-md-12">
@@ -47,14 +47,12 @@
                   <div class="card text-dark bg-light add-task">
       
                       <form id="newTaskForm">
-                          <h1 class="card-header" id="addtask">Add a Task</h1>
+                          <h1 class="card-header">Add a Task</h1>
           
                         <section class="card-body text-dark">
                           <div class="add-task">
                               <label for="newTaskNameInput" class="form-label">Name</label>
                               <input id="newTaskNameInput" type="text" class="form-control" aria-describedby="name-of-task" placeholder="Name of Task">
-                              <!-- <div class="alert alert-danger hide-alert invalid-form-alert" id="alert" role="alert">
-                              </div> -->
                           </div>
           
                           <br>
@@ -62,8 +60,6 @@
                           <div class="add-task">
                               <label for="newTaskDescription" class="form-label">Description</label>
                               <textarea type="text" class="form-control" id="newTaskDescription" placeholder="Description of Task"></textarea>
-                              <!-- <div class="alert alert-danger hide-alert invalid-form-alert" id="alert" role="alert">
-                              </div> -->
                           </div>
           
                           <br>
@@ -71,8 +67,6 @@
                           <div class="add-task">
                               <label for="newTaskAssignedTo" class="form-label">Assigned To</label>
                               <input id="newTaskAssignedTo" type="text" class="form-control" aria-describedby="assigned-to" placeholder="Task Assigned To">
-                              <!-- <div class="alert alert-danger hide-alert invalid-form-alert" id="alert" role="alert">
-                              </div> -->
                           </div>
           
                           <br>
@@ -80,38 +74,7 @@
                           <div class="add-task">
                               <label for="newTaskDueDate" class="form-label">Due Date</label>
                               <input id="newTaskDueDate" type="date" class="form-control" aria-describedby="due-date-of-task">
-                              <!-- <div class="alert alert-danger hide-alert invalid-form-alert" id="alert" role="alert">
-                              </div> -->
                           </div>
-          
-                          <br>
-          
-                          <!-- <div class="add-task">
-                              <label for="status" class="form-label">Status</label>
-                              <input name="status" type="text" list="task-status" class="form-control" id="status" aria-describedby="status-of-task" placeholder="Status of Task">
-                              <datalist id="task-status">
-                                  <option value="IN PROGRESS">IN PROGRESS</option>
-                                  <option value="DONE">DONE</option>
-                                  <option value="REVIEW">REVIEW</option>
-                                  <option value="STARTED">STARTED</option> 
-                                </datalist>   
-                                <div class="error">
-                                </div>   
-                          </div> -->
-
-                          <!-- <div class="add-task">
-                            <label for="status" class="form-label">Status</label>
-                            <select name="status" id="status">
-                                <option value="IN PROGRESS">IN PROGRESS</option>
-                                <option value="DONE">DONE</option>
-                                <option value="REVIEW">REVIEW</option>
-                                <option value="STARTED">STARTED</option>
-                            </select>
-
-                              <div class="error">
-                              </div>   
-                        </div> -->
-      
                           <br>
 
                           <div class="task-add-button">
@@ -132,57 +95,17 @@
             
     
         <!------------------ Task Manager --------------------->
+<div id="taskmanager"></div>
 <br><br><br><br>    
 <div class="container bg-* d-grid gap-4">
-    <div id="taskmanager"><h1 class="text-white">Task Manager</h1>
-    <ul class="list-group" id="tasksList"></ul>
-      <!-- <li class="d-flex row g-4 justify-content-center align-items-center">
-        <div class="col-12 col-md-8 col-lg-9">
-          <div class="card g-4">
-              <div class="card-body"> 
-                <div class="d-flex w-100 align-items-center justify-content-between align-items-center">
-                  <h4 class="card-text"><b>Name:</b> Kharmalina Wireframe</h4>
-                <span class="badge badge-danger">TODO</span>
-                </div>
-                <h4 class="card-text"><b>Description:</b> Create a wireframe in Figma and share with team</h4>
-                <h4 class="card-text"><b>Assigned To:</b> Kharmalina </h4>
-                <h4 class="card-text"><b>Due Date:</b> 02/14/2022</h4>
-                  <br>
-              </div>
-          </div>
-        </div>
-      </li> -->
-    
-
-    <!-- <ul id="tasksList">
-      <li class="row g-4 row d-flex justify-content-center">
-        <div class="col-12 col-md-8 col-lg-8">
-          <div class="card g-4">
-              <div class="card-body"> 
-                <h4 class="card-text"><b>Name:</b> Kharmalina Wireframe</h4>
-                <h4 class="card-text"><b>Description:</b> Create a wireframe in Figma and share with team</h4>
-                <h4 class="card-text"><b>Assigned To:</b> Kharmalina </h4>
-                <h4 class="card-text"><b>Due Date:</b> 02/14/2022</h4>
-                <label for="status" class="form-label" style="font-weight: 400; font-size: 25px;"><b>Status:</b></label>
-                  <select name="status" id="status">
-                      <option value="IN PROGRESS">IN PROGRESS</option>
-                      <option value="DONE">DONE</option>
-                      <option value="TODO">TODO</option>
-                      <option value="STARTED">STARTED</option>
-                  </select>
-                  <br>
-                <div class="btn-group"><a href="#" class="btn btn-primary">Edit</a></div>
-                <div class="btn-group"><a href="#" class="btn btn-primary">Delete</a></div>
-              </div>
-          </div>
-        </div>
-      </li>
-    </ul> -->
+  <div>
+    <h1 class="text-white" id="taskManagerTitle"> Task Manager</h1>
+    <br>
+      <ul class="list-group" id="tasksList"></ul>
   </div>
 </div>
     <br>
 </main>    
-
 
     
     <!------ Javascript Bootstrap tags------->
@@ -205,7 +128,7 @@
 
 <footer>
     <br>
-    <p>Created by Kharmalina, Davis, Tanya & Jacob &#129505; &#128187;</p>
+    <p>Created by Kharmalina, Davis, & Tanya &#129505; &#128187;</p>
     <span>&copy; 2022</span>
   </footer>
 

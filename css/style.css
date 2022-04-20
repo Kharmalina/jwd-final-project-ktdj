@@ -111,3 +111,8 @@ body, html {
 .hide-alert {
   display: none;
 }
+
+.task-button {
+  display: flex;
+  justify-content: space-between;
+}
