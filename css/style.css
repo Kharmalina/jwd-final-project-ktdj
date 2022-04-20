@@ -7,7 +7,7 @@ body, html {
 
   h1 {
       text-align: center;
-      color:#001069;
+      color:#000000;
   }
 
 #image {
@@ -61,6 +61,10 @@ body, html {
       text-align: center;
   }
 
+  .form-label {
+      text-align: left;
+  }
+
   .card {
       font-weight: 600;
       opacity: 0.87;
@@ -86,10 +90,29 @@ body, html {
      border-right-color:#001069;
  }
 
- .btn-group {
+ .btn-group.btn {
     cursor: pointer; /* Pointer/hand icon */
-
-  
  }
 
+ a.btn {
+   text-align: center;
+ }
 
+ /* #alertMessage {
+  font-size: 14.5px;
+  margin-top: 5px;
+ } */
+
+
+ .invalid-form-alert {
+  display: block;
+
+} 
+.hide-alert {
+  display: none;
+}
+
+.task-button {
+  display: flex;
+  justify-content: space-between;
+}
