@@ -33,7 +33,8 @@
                     
                       <li class="nav-item">
                         <a class="nav-link button" href="#taskmanager">Manage Tasks</a>
-                      </li>    
+                      </li>  
+                      <li><i class="fa fa-facebook fa-lg"></i></li>  
               </div>          
         </header>  
         <div id="addtask"></div>
@@ -53,36 +54,47 @@
                           <div class="add-task">
                               <label for="newTaskNameInput" class="form-label">Name</label>
                               <input id="newTaskNameInput" type="text" class="form-control" aria-describedby="name-of-task" placeholder="Name of Task">
+
                           </div>
           
                           <br>
           
                           <div class="add-task">
+
                               <label for="newTaskDescription" class="form-label">Description</label>
                               <textarea type="text" class="form-control" id="newTaskDescription" placeholder="Description of Task"></textarea>
+
                           </div>
           
                           <br>
           
                           <div class="add-task">
+
                               <label for="newTaskAssignedTo" class="form-label">Assigned To</label>
                               <input id="newTaskAssignedTo" type="text" class="form-control" aria-describedby="assigned-to" placeholder="Task Assigned To">
+
                           </div>
           
                           <br>
           
                           <div class="add-task">
+
                               <label for="newTaskDueDate" class="form-label">Due Date</label>
                               <input id="newTaskDueDate" type="date" class="form-control" aria-describedby="due-date-of-task">
+
                           </div>
                           <br>
 
+
                           <div class="task-add-button">
                               <button id="submit-btn" type="submit" class="btn btn-primary">Submit Task!</button>  
+
                           </div>
                           <br>
+
                           <div class="alert alert-danger hide-alert" id="alert" role="alert">
                             Error!
+
                           </div>
                         </div>   
                         </section>  
@@ -122,6 +134,7 @@
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
         crossorigin="anonymous"></script>
     <!-- External JS files -->
+
     <script src="js/taskManager.js"></script>
     <script src="js/index.js"></script>
 </body>
